@@ -1,0 +1,69 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+@{
+    if (@Model.UserFound != null)
+    {
+        <div class="text-center">
+            <h1>Welcome back, @Model.UserFound?.Username</h1>
+            <h2>Currently you have:</h2>
+            <table class="table table-bordered">
+                <th>
+                    You have:
+                </th>
+                <th>
+                    Quantity:
+                </th>
+                <th>
+                    Counted in:
+                </th>
+                @foreach (var item in Model.UsersIngredients) {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Ingredient!.IngredientName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Quantity)
+                        </td>
+                        <td>
+                            @Model.GetMeasurement(item.MeasurementId).Result
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+        <h2>Would you like to make something from your items or search from any other</h2>
+        <button class="btn btn-primary" onclick="location.href='../Search/SearchFromMyList?id=@Model.UserFound!.Id'">From my items</button>
+        <button class="btn btn-primary" onclick="location.href='../'">Back</button>
+    }
+    else
+    {
+        <div class="text-center">
+            <h1 class="display-4">Welcome</h1>
+            <h2>Please pick your user</h2>
+            <table class="table table-bordered">
+                <th>
+                    @Html.DisplayNameFor(model => model.User[0].Username)
+                </th>
+                <th>
+                    Choose user
+                </th>
+                @foreach (var item in Model.User)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Username)
+                        </td>
+                        <td>
+                            <a asp-page="./Index" asp-route-id="@item.Id">Login</a>
+                        </td>
+                    </tr>
+                }
+            </table>
+                   <button class="btn btn-primary" onclick="location.href='../Search/SearchFromAnyList'">Search for all recepies</button>
+        </div>
+    }
+}

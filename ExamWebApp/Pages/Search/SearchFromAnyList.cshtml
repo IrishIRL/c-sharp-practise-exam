@@ -1,0 +1,66 @@
+﻿@page
+@using Microsoft.EntityFrameworkCore
+@model ExamWebApp.Pages.Search.SearchFromAnyList
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<form>
+    <p>
+        Category: <input type="text" asp-for="SearchString" />
+        <input type="checkbox" asp-for="Exclude">Exclude</input>
+        <input type="submit" value="Filter" />
+    </p>
+</form>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>
+            Recipe Name
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Recipe[0].Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Recipe[0].Category)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Recipe[0].Servings)
+        </th>
+        <th>
+            Cook Time
+        </th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model.Recipe)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReсipeName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Servings)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TimeToReadyMins)
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+</body>
+</html>

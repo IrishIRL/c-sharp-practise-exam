@@ -1,0 +1,143 @@
+﻿@page
+@using ExamWebApp.Domain
+@model ExamWebApp.Pages.Search.SearchFromMyList
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<div>
+    <div class="text-center">
+        <h2>Receipts that suit you:</h2>
+        <table class="table table-bordered">
+            <th style="background-color: gray; color: white;">
+                You have ingredients for:
+            </th>
+            
+            @foreach (var suitableRecipe in Model.SuitableRecipes)
+            {
+                <tr>
+                    <td>
+                        @suitableRecipe
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
+</body>
+</html>
+@{
+    int counter = 0;
+<div class="text-center">
+<table class="table table-bordered">
+    <th style="background-color: gray; color: white;">
+        You can fully make:
+    </th>
+
+    @{
+        foreach (var item in @Model.ListOfItems)
+        {
+            if (item)
+            {
+                var workingReceipts = Model.Recipe[counter].ReсipeName;
+                <tr>
+                    <td>
+                        @workingReceipts
+                    </td>
+                </tr>
+            }
+            counter++;
+        }
+    }
+</table>
+</div>
+}
+<br/>
+@{
+    string currentRecipe = "";
+    
+    foreach (var recipe in Model.Recipe)
+    {
+        foreach (var suitableRecipe in Model.SuitableRecipes)
+        {
+            if (suitableRecipe == recipe.ReсipeName)
+            {
+                foreach (var recipeIngredient in Model.RecipeIngredient)
+                {
+                    if (recipeIngredient.Recipe!.ReсipeName == recipe.ReсipeName)
+                    {
+                        if (Model.CurrentList != recipe.ReсipeName)
+                        {
+                            if (currentRecipe != recipe.ReсipeName)
+                            {
+                                <br/>
+                                <h3>Recipe: @recipe.ReсipeName</h3>
+                            }
+                            
+                            <table class="table table-bordered">
+                                <th style="background-color: gray; color: white;">
+                                    Ingredient needed:
+                                </th>
+                                <th style="background-color: gray; color: white;">
+                                    Amount is needed:
+                                </th>
+                                <th style="background-color: gray; color: white;">
+                                    Ingredient you have:
+                                </th>
+                                <th style="background-color: gray; color: white;">
+                                    Amount is needed:
+                                </th>
+                                <th style="background-color: gray; color: white;">
+                                    Ready:
+                                </th>
+                            
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => recipeIngredient.Ingredient!.IngredientName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => recipeIngredient.Quantity)
+                                    </td>
+                                    
+                                    @foreach (var usersIngredient in Model.UsersIngredients)
+                                    {
+                                        if (currentRecipe != recipe.ReсipeName)
+                                        {
+                                            currentRecipe = recipe.ReсipeName;
+                                        }
+                                        
+                                        if (recipeIngredient.Ingredient!.IngredientName == usersIngredient.Ingredient!.IngredientName)
+                                        {
+                                            <td>
+                                                @usersIngredient.Ingredient.IngredientName
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => usersIngredient.Quantity)
+                                            </td>
+
+                                            if (usersIngredient.Quantity >= recipeIngredient.Quantity)
+                                            {
+                                                <td>
+                                                    +
+                                                </td>
+                                            }
+                                            else
+                                            {
+                                                <td>
+                                                    -
+                                                </td>
+                                            }
+                                        }
+                                    }
+                                </tr>
+                            </table>
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

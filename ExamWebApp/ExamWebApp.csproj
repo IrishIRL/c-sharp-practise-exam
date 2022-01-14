@@ -1,0 +1,107 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.0">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
+      <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.0" />
+      <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Pages\Users\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Users\Delete.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Users\Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Users\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Users\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\RecipeIngredients\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\RecipeIngredients\Delete.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\RecipeIngredients\Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\RecipeIngredients\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\RecipeIngredients\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Ingredients\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Ingredients\Delete.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Ingredients\Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Ingredients\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Ingredients\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Measurements\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Measurements\Delete.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Measurements\Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Measurements\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Measurements\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Recipes\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Recipes\Delete.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Recipes\Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Recipes\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Recipes\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\UsersIngredients\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\UsersIngredients\Delete.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\UsersIngredients\Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\UsersIngredients\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\UsersIngredients\Index.cshtml" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <UpToDateCheckInput Remove="Pages\RecipeIngredients\Create.cshtml" />
+      <UpToDateCheckInput Remove="Pages\RecipeIngredients\Delete.cshtml" />
+      <UpToDateCheckInput Remove="Pages\RecipeIngredients\Details.cshtml" />
+      <UpToDateCheckInput Remove="Pages\RecipeIngredients\Edit.cshtml" />
+      <UpToDateCheckInput Remove="Pages\RecipeIngredients\Index.cshtml" />
+      <UpToDateCheckInput Remove="Pages\Users\Create.cshtml" />
+      <UpToDateCheckInput Remove="Pages\Users\Delete.cshtml" />
+      <UpToDateCheckInput Remove="Pages\Users\Details.cshtml" />
+      <UpToDateCheckInput Remove="Pages\Users\Edit.cshtml" />
+      <UpToDateCheckInput Remove="Pages\Users\Index.cshtml" />
+      <UpToDateCheckInput Remove="Pages\Measurements\Create.cshtml" />
+      <UpToDateCheckInput Remove="Pages\Measurements\Delete.cshtml" />
+      <UpToDateCheckInput Remove="Pages\Measurements\Details.cshtml" />
+      <UpToDateCheckInput Remove="Pages\Measurements\Edit.cshtml" />
+      <UpToDateCheckInput Remove="Pages\Measurements\Index.cshtml" />
+      <UpToDateCheckInput Remove="Pages\RecipeIngredients\Create.cshtml" />
+      <UpToDateCheckInput Remove="Pages\RecipeIngredients\Delete.cshtml" />
+      <UpToDateCheckInput Remove="Pages\RecipeIngredients\Details.cshtml" />
+      <UpToDateCheckInput Remove="Pages\RecipeIngredients\Edit.cshtml" />
+      <UpToDateCheckInput Remove="Pages\RecipeIngredients\Index.cshtml" />
+      <UpToDateCheckInput Remove="Pages\Ingredients\Create.cshtml" />
+      <UpToDateCheckInput Remove="Pages\Ingredients\Delete.cshtml" />
+      <UpToDateCheckInput Remove="Pages\Ingredients\Details.cshtml" />
+      <UpToDateCheckInput Remove="Pages\Ingredients\Edit.cshtml" />
+      <UpToDateCheckInput Remove="Pages\Ingredients\Index.cshtml" />
+      <UpToDateCheckInput Remove="Pages\RecipeIngredients\Create.cshtml" />
+      <UpToDateCheckInput Remove="Pages\RecipeIngredients\Delete.cshtml" />
+      <UpToDateCheckInput Remove="Pages\RecipeIngredients\Details.cshtml" />
+      <UpToDateCheckInput Remove="Pages\RecipeIngredients\Edit.cshtml" />
+      <UpToDateCheckInput Remove="Pages\RecipeIngredients\Index.cshtml" />
+      <UpToDateCheckInput Remove="Pages\Measurements\Create.cshtml" />
+      <UpToDateCheckInput Remove="Pages\Measurements\Delete.cshtml" />
+      <UpToDateCheckInput Remove="Pages\Measurements\Details.cshtml" />
+      <UpToDateCheckInput Remove="Pages\Measurements\Edit.cshtml" />
+      <UpToDateCheckInput Remove="Pages\Measurements\Index.cshtml" />
+      <UpToDateCheckInput Remove="Pages\RecipeIngredients\Create.cshtml" />
+      <UpToDateCheckInput Remove="Pages\RecipeIngredients\Delete.cshtml" />
+      <UpToDateCheckInput Remove="Pages\RecipeIngredients\Details.cshtml" />
+      <UpToDateCheckInput Remove="Pages\RecipeIngredients\Edit.cshtml" />
+      <UpToDateCheckInput Remove="Pages\RecipeIngredients\Index.cshtml" />
+      <UpToDateCheckInput Remove="Pages\Users\Create.cshtml" />
+      <UpToDateCheckInput Remove="Pages\Users\Delete.cshtml" />
+      <UpToDateCheckInput Remove="Pages\Users\Details.cshtml" />
+      <UpToDateCheckInput Remove="Pages\Users\Edit.cshtml" />
+      <UpToDateCheckInput Remove="Pages\Users\Index.cshtml" />
+      <UpToDateCheckInput Remove="Pages\UsersIngredients\Create.cshtml" />
+      <UpToDateCheckInput Remove="Pages\UsersIngredients\Delete.cshtml" />
+      <UpToDateCheckInput Remove="Pages\UsersIngredients\Details.cshtml" />
+      <UpToDateCheckInput Remove="Pages\UsersIngredients\Edit.cshtml" />
+      <UpToDateCheckInput Remove="Pages\UsersIngredients\Index.cshtml" />
+      <UpToDateCheckInput Remove="Pages\UsersIngredients\Create.cshtml" />
+      <UpToDateCheckInput Remove="Pages\UsersIngredients\Delete.cshtml" />
+      <UpToDateCheckInput Remove="Pages\UsersIngredients\Details.cshtml" />
+      <UpToDateCheckInput Remove="Pages\UsersIngredients\Edit.cshtml" />
+      <UpToDateCheckInput Remove="Pages\UsersIngredients\Index.cshtml" />
+    </ItemGroup>
+
+</Project>
